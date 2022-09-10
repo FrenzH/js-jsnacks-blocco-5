@@ -63,7 +63,7 @@ function getRandomScores(min,max){
 getRandomScores(1,50);
 console.log(teamsArray)
 
-/*************************************************************/
+/**************************************************************************/
 
 //SNACK2
 
@@ -92,3 +92,59 @@ do{
 
 const array2 = getArrayBetweenAandBRange(array1,num1,num2);
 console.log(array2)
+
+/**************************************************************************/
+
+//SNACK3
+
+const zucchina ={
+    type : 'vegetables',
+    length : 0,
+    weigth : 0
+}
+
+const zucchineArray = [];
+
+zucchineArray.push({...zucchina,length : 8, weigth : 5});
+zucchineArray.push({...zucchina,length : 11, weigth : 6});
+zucchineArray.push({...zucchina,length : 7, weigth : 4});
+zucchineArray.push({...zucchina,length : 18, weigth : 8});
+zucchineArray.push({...zucchina,length : 20, weigth : 9});
+zucchineArray.push({...zucchina,length : 25, weigth : 10});
+zucchineArray.push({...zucchina,length : 15, weigth : 7});
+zucchineArray.push({...zucchina,length : 14, weigth : 7});
+zucchineArray.push({...zucchina,length : 12, weigth : 6});
+zucchineArray.push({...zucchina,length : 19, weigth : 8});
+
+
+const zucchineMin15 =[];
+const zucchineMag15 =[];
+
+function lengthFilter (array , filterValue){
+    array.forEach((element) => {
+        if(element.length>filterValue)zucchineMag15.push(element);
+        else if(element.length<filterValue)zucchineMin15.push(element);
+    })
+}
+
+lengthFilter(zucchineArray,15);
+
+let weigthZucchineMag15 = 0;
+
+zucchineMag15.forEach((element) => {
+     
+    weigthZucchineMag15 += element.weigth;
+})
+console.log('zucchineMag15\' weigth ' ,weigthZucchineMag15);
+
+let weigthZucchineMin15 = 0;
+
+zucchineMin15.forEach((element) => {
+    weigthZucchineMin15 += element.weigth;
+
+})
+
+console.log('zucchineMin15\' weigth :',weigthZucchineMin15)
+
+
+
