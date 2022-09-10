@@ -63,3 +63,32 @@ function getRandomScores(min,max){
 getRandomScores(1,50);
 console.log(teamsArray)
 
+/*************************************************************/
+
+//SNACK2
+
+const array1 = [1,3,4,5,6,7,8,13,12,18];
+
+function getArrayBetweenAandBRange(array,a,b){  //a<b
+      let i ;
+      const array2 = [];
+      if(a===0)a++;
+      for (i=a-1;i<b;i++){
+        array2.push(array[i]);
+
+      }
+      return array2;
+}
+
+alert('enter two number : firts one must be less than second');
+let num1;
+let num2;
+
+do{
+    num1 = parseInt(prompt('Enter num1'));
+    num2 = parseInt(prompt('Enter num2'));
+}while(num1>num2 || isNaN(num1) || isNaN(num2));
+
+
+const array2 = getArrayBetweenAandBRange(array1,num1,num2);
+console.log(array2)
